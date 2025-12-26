@@ -1,4 +1,4 @@
-# Laravel + React Indian Standard Time (IST) Display
+# PHP_Laravel12_Get_Current_Date_And_Time_using_React
 
 A modern **Laravel 12 + React 18** application that displays **real-time Indian Standard Time (IST)** with Indian festivals, Hindi day names, auto-refresh, and a responsive tricolor-themed UI. This project is suitable for **learning, interviews, MCA/BCA projects, and real-world usage**.
 
