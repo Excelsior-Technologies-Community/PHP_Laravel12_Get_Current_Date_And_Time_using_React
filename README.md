@@ -1,59 +1,241 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel + React Indian Standard Time (IST) Display
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern **Laravel 12 + React 18** application that displays **real-time Indian Standard Time (IST)** with Indian festivals, Hindi day names, auto-refresh, and a responsive tricolor-themed UI. This project is suitable for **learning, interviews, MCA/BCA projects, and real-world usage**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Core Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Real-time Indian Standard Time (IST)
+* Automatic server-based time synchronization
+* 12-hour & 24-hour time format toggle
+* Auto-refresh with configurable intervals
+* Indian festival calendar
+* Hindi & English day names
+* Weekend / weekday detection
+* Fully responsive design
 
-## Learning Laravel
+### UI / UX Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* Indian tricolor theme (Saffron, White, Green)
+* Smooth animations & transitions
+* Interactive cards & hover effects
+* Loading & error handling states
+* Dark / Light mode ready
+* WCAG-accessible design
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Technical Features
 
-## Laravel Sponsors
+* Laravel 12 REST API backend
+* React 18 frontend with Hooks
+* Axios for API communication
+* CORS configuration
+* CSRF protection
+* API rate limiting ready
+* Centralized service architecture
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠 Tech Stack
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* **Backend:** Laravel 12 (PHP 8.2+)
+* **Frontend:** React 18 + Vite
+* **Database:** MySQL / SQLite
+* **HTTP Client:** Axios
+* **Styling:** Custom CSS
+* **Timezone:** Asia/Kolkata (IST)
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Quick Start
 
-## Code of Conduct
+### Prerequisites
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* PHP >= 8.2
+* Composer >= 2.5
+* Node.js >= 18.x
+* npm >= 9.x
+* MySQL >= 8.0 or SQLite
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Installation Guide
 
-## License
+### Clone Repository
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/yourusername/laravel-react-indian-time.git
+cd laravel-react-indian-time
+```
+
+### Backend Setup (Laravel)
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configure `.env`:
+
+```env
+APP_NAME="Indian Time Display"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+APP_TIMEZONE=Asia/Kolkata
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=indian_time
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run migrations & seeders:
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+### Frontend Setup (React)
+
+```bash
+npm install
+npm run dev
+```
+
+### Start Application
+
+```bash
+php artisan serve
+```
+
+Visit:
+
+```
+http://localhost:8000
+```
+
+---
+
+## Project Structure
+
+```text
+laravel-react-indian-time/
+├── app/
+│   ├── Http/Controllers/Api/DateTimeController.php
+│   ├── Services/TimeService.php
+├── config/
+│   ├── cors.php
+│   └── app.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── js/components/
+│   ├── js/utils/
+│   └── views/
+├── routes/api.php
+├── routes/web.php
+├── tests/
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## API Endpoints
+
+### Get Current Indian Date & Time
+
+**GET** `/api/current-datetime`
+
+Response:
+
+```json
+{
+  "success": true,
+  "data": {
+    "date": "25-12-2024",
+    "time": "14:30:45",
+    "datetime": "25-12-2024 14:30:45",
+    "timezone": "Asia/Kolkata",
+    "timestamp": 1735128045,
+    "timezone_offset": "+5:30",
+    "is_daylight_saving": false,
+    "day_info": {
+      "english": "Wednesday",
+      "hindi": "बुधवार",
+      "is_weekend": false
+    },
+    "festivals": []
+  }
+}
+```
+
+### Get Indian Festivals
+
+**GET** `/api/indian-festivals`
+
+---
+
+## Database Schema
+
+### festivals table
+
+| Column              | Type    | Description      |
+| ------------------- | ------- | ---------------- |
+| id                  | bigint  | Primary key      |
+| name                | string  | Festival name    |
+| hindi_name          | string  | Hindi name       |
+| month               | int     | Festival month   |
+| day                 | int     | Festival day     |
+| emoji               | string  | Emoji icon       |
+| is_national_holiday | boolean | National holiday |
+| is_variable_date    | boolean | Variable date    |
+
+---
+
+## Testing
+
+### PHP Unit Tests
+
+```bash
+php artisan test
+```
+
+### Frontend Tests
+
+```bash
+npm test
+```
+
+---
+
+## Security Notes
+
+* Server-side time calculation (no client manipulation)
+* CORS restricted to trusted origins
+* CSRF protection enabled
+* API error handling with fallback
+
+---
+
+## Future Enhancements
+
+* User authentication
+* Regional festival filtering
+* Multilingual UI (Gujarati, Marathi)
+* Dark mode toggle
+* PWA support
+* Deployment guide
+
+---
+
+## Screenshot
+<img width="1838" height="965" alt="image" src="https://github.com/user-attachments/assets/ddb3c458-96c9-438a-915c-8addd4def7ec" />
