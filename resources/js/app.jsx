@@ -1,15 +1,14 @@
-import './bootstrap';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import DateTimeDisplay from './components/DateTimeDisplay';
+import "./bootstrap";
 
-function App() {
-    return <DateTimeDisplay />;
-}
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
+import DateTimeDisplay from "./components/DateTimeDisplay";
+
+const root = ReactDOM.createRoot(document.getElementById("app"));
+
 root.render(
     <React.StrictMode>
-        <App />
+        <DateTimeDisplay />
     </React.StrictMode>
 );
