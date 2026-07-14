@@ -2,6 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\WorldClockController;
+use App\Http\Controllers\Api\DateDifferenceController;
+
+/*
+|--------------------------------------------------------------------------
+| Current Date & Time
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/current-datetime', function (Request $request) {
 
@@ -26,3 +34,19 @@ Route::get('/current-datetime', function (Request $request) {
         'timestamp' => $date->timestamp,
     ]);
 });
+
+/*
+|--------------------------------------------------------------------------
+| World Clock API
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/world-clocks', [WorldClockController::class, 'index']);
+
+/*
+|--------------------------------------------------------------------------
+| Date Difference Calculator API
+|--------------------------------------------------------------------------
+*/
+
+Route::post('/date-difference', [DateDifferenceController::class, 'calculate']);
